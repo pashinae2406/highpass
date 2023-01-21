@@ -22,7 +22,7 @@ img {
 	src: local('OpenSans-Bold'),
     url('../fonts/OpenSans-Bold.woff2') format('woff2'),
 		url('../fonts/OpenSans-Bold.woff') format('woff');
-	font-weight: 400;
+	font-weight: 700;
 	font-style: normal;
   font-display: swap;
 }
@@ -32,9 +32,13 @@ img {
 	src: local('OpenSans-Regular'),
     url('../fonts/OpenSans-Regular.woff2') format('woff2'),
 		url('../fonts/OpenSans-Regular.woff') format('woff');
-	font-weight: 700;
+	font-weight: 400;
 	font-style: normal;
   font-display: swap;
+}
+
+body {
+  font-family: 'OpenSans', 'sans-serif';
 }
 
 .container {
@@ -93,19 +97,23 @@ img {
 }
 
 .bottom-left {
-  width: 60%;
+  width: 75%;
   margin-right: 183px;
 }
 
 .section-bottom {
-  background-color: #FFFFFF;
+  position: relative;
+  background-color: transparent;
   padding: 60px 57px;
   display: flex;
   justify-content: space-between;
-  background-image: url("../index.html#11");
-  /* background-image: url("../img/sprite.svg#11"); */
-  background-repeat: no-repeat;
-  background-position: 720 24;
+}
+
+.bottom-svg-background {
+  position: absolute;
+  top: 24px;
+  right: 170px;
+  z-index: -1;
 }
 
 .section-bottom-head {
