@@ -6,23 +6,21 @@ gsap.from('.img-second', {opacity: 0, duration: 1, delay: 2.2});
 gsap.from('.img-three', {opacity: 0, duration: 1, delay: 3});
 gsap.from('.photos__author', {opacity: 0, duration: 1, delay: 3.8});
 
-let menu = document.querySelector('.menu');
-let burger = document.querySelector('.burger');
-var reverse = document.querySelector('.close');
+const burgerOpen = gsap.timeline()
+      .pause()
+      .set('.menu',  { display: 'block'})
+      .from('.menu', {opacity: 0, duration: 0.3})
+      .from('.nav__list', {opacity: 0, duration: 0.5, y: 20})
+      .from('.sub-menu', {opacity: 0, duration: 0.5, y: 20})
+      .from('.social', {opacity: 0, duration: 0.5, y: 20});
 
-const tl = new TimelineMax();
+document.querySelector('.burger').addEventListener('click', () => {
+  burgerOpen.play()
+})
 
-burger.addEventListener('click', function () {
-  menu.classList.toggle('menu--open');
-  tl.from('.menu', {opacity: 0, duration: 0.3})
-    .from('.nav__list', {opacity: 0, duration: 0.5, y: 20})
-    .from('.sub-menu', {opacity: 0, duration: 0.5, y: 20})
-    .from('.social', {opacity: 0, duration: 0.5, y: 20});
-});
-
-reverse.onclick = function() {
-  tl.reverse();
-}
+document.querySelector('.close').addEventListener('click', () => {
+  burgerOpen.reverse()
+})
 
 
 
