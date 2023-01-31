@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -220,7 +227,14 @@
                   </button>
                 </div>
               </div>
-              <div class="work__article-right step-1"></div>
+              <div class="work__article-right step-1">
+                <picture>
+                  <source srcset="img/background-step-324-1.webp" media="(max-width: 576px)">
+                  <source srcset="img/background-step-768-1.webp" media="(max-width: 992px)">
+                  <source srcset="img/background-step-1024-1.webp" media="(max-width: 1200px)">
+                  <img class="lazyload" data-src="img/background-step-1.webp" alt="step-1">
+                </picture>
+              </div>
             </div>
             <div class="work__article-steps" data-target="two-step">
               <div class="work__article-left article-step-2">
@@ -239,7 +253,14 @@
                   </button>
                 </div>
               </div>
-              <div class="work__article-right step-2"></div>
+              <div class="work__article-right step-2">
+                <picture>
+                  <source srcset="img/background-step-324-2.webp" media="(max-width: 576px)">
+                  <source srcset="img/background-step-768-2.webp" media="(max-width: 992px)">
+                  <source srcset="img/background-step-1024-2.webp" media="(max-width: 1200px)">
+                  <img class="lazyload" data-src="img/background-step-2.webp" alt="step-1">
+                </picture>
+              </div>
             </div>
             <div class="work__article-steps" data-target="three-step">
               <div class="work__article-left article-step-3">
@@ -258,7 +279,14 @@
                   </button>
                 </div>
               </div>
-              <div class="work__article-right step-3"></div>
+              <div class="work__article-right step-3">
+                <picture>
+                  <source srcset="img/background-step-324-3.webp" media="(max-width: 576px)">
+                  <source srcset="img/background-step-768-3.webp" media="(max-width: 992px)">
+                  <source srcset="img/background-step-1024-3.webp" media="(max-width: 1200px)">
+                  <img class="lazyload" data-src="img/background-step-3.webp" alt="step-1">
+                </picture>
+              </div>
             </div>
             <div class="work__article-steps" data-target="four-step">
               <div class="work__article-left article-step-4">
@@ -278,7 +306,14 @@
                   </button>
                 </div>
               </div>
-              <div class="work__article-right step-4"></div>
+              <div class="work__article-right step-4">
+                <picture>
+                  <source srcset="img/background-step-324-4.webp" media="(max-width: 576px)">
+                  <source srcset="img/background-step-768-4.webp" media="(max-width: 992px)">
+                  <source srcset="img/background-step-1024-4.webp" media="(max-width: 1200px)">
+                  <img class="lazyload" data-src="img/background-step-4.webp" alt="step-1">
+                </picture>
+              </div>
             </div>
           </div>
         </div>
@@ -520,6 +555,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="index.js"></script>
+  <script src="js/lazyload.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
