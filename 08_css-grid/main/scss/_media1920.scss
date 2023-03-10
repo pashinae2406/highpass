@@ -1,0 +1,42 @@
+@media (max-width: 1919px) {
+
+  :root {
+    --paddingContainer: 100px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .header {
+
+    &__logo {
+      margin-right: 82px;
+    }
+
+    &__list {
+      gap: 33px;
+    }
+
+    &__nav {
+      margin-right: 131px;
+    }
+  }
+
+  .about {
+
+    &__input {
+      width: 342px;
+    }
+  }
+
+  .contacts {
+
+    &__textarea {
+      grid-row: 3/span 2;
+    }
+
+  }
+}
+
+

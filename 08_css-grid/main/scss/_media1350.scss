@@ -1,0 +1,154 @@
+@media (max-width: 1350px) {
+
+  :root {
+    --paddingContainer: 31px;
+  }
+
+  .header {
+
+    &__logo {
+      width: 166px;
+      height: 26.79px;
+    }
+  }
+
+  .work {
+    padding-top: 34px;
+
+    &__title {
+      margin-bottom: 9px;
+    }
+
+    &__left {
+      padding: 425px 30px 30px;
+      background-image: url(../images/works_participants1-1350.png);
+    }
+
+    &__right {
+      gap: 25px;
+    }
+
+    &__name {
+      font-size: 34px;
+      line-height: 100%;
+      margin-bottom: 22px;
+    }
+
+    &__btn {
+      padding: 15.5px 22px;
+    }
+  }
+
+  .about {
+
+    padding-bottom: 80px;
+
+    &__form {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &__input {
+      margin-bottom: 20px;
+    }
+
+    &__right {
+      gap: 15px;
+    }
+  }
+
+  .projects {
+    padding-top: 75px;
+
+    &__list {
+      grid-template-columns: repeat(4, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    &__item:nth-child(3) {
+      grid-column: 3 / span 2;
+    }
+
+    &__item:nth-child(5) {
+      grid-column: 1 /span 3;
+      grid-row: 2 / span 1;
+    }
+
+    &__item:nth-child(4) {
+      grid-column: 2 /span 3;
+      grid-row: 3 / span 1;
+    }
+
+    .right-top {
+      background-image: url(../images/project-right-top-1350.png);
+    }
+
+    .left-bottom {
+      background-image: url(../images/project-left-bottom-1350.png);
+    }
+  }
+
+  .contacts {
+    padding-top: 106px;
+    padding-bottom: 73px;
+    gap: 14px;
+
+    &__address {
+      width: 100%;
+      height: 157px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-right: 0;
+
+      .contacts__name {
+        margin-bottom: -17px;
+      }
+    }
+
+    .icon-close {
+      right: 20px;
+      bottom: 109px;
+      top: auto;
+      left: auto;
+    }
+
+    &__adr {
+      width: 350px;
+    }
+
+    &__tel {
+      position: absolute;
+      bottom: 19px;
+      left: 180px;
+    }
+
+    &__textarea {
+      grid-row: 3 / span 3;
+    }
+
+  }
+
+  .map {
+    width: 590px;
+  }
+
+  .footer {
+
+    &__logo svg {
+      width: 166px;
+      height: 28.79px;
+      margin-bottom: 7px;
+    }
+
+    &__paragraph {
+      justify-self: flex-end;
+    }
+  }
+}
