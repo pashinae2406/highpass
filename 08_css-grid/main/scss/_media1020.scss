@@ -36,10 +36,6 @@
       padding-left: calc(100% - 25px - var(--paddingContainer));
     }
 
-    &__form {
-      top: 35px;
-    }
-
     .search-open {
       width: 23px;
       height: 23px;
@@ -159,6 +155,10 @@
         bottom: 106px;
       }
     }
+
+    // &__btn-adress {
+    //   bottom: 20px;
+    // }
 
     &__adr {
       width: 436px;

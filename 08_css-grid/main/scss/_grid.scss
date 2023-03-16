@@ -34,10 +34,30 @@
 
   .search-open {
     display: none;
+    fill: #999999;
+
+  }
+
+  .search-open circle {
+    fill: #999999;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  .search-open:hover circle {
+    fill: #FF6E30;
   }
 
   .search--open {
     display: none;
+  }
+
+  .search-close path {
+    fill: white;
+    transition: fill 0.3s ease-in-out;
+  }
+
+  .search-close:hover path {
+    fill: #FF6E30;
   }
 
   .search--close {
@@ -97,14 +117,26 @@
 
   &__form {
     position: absolute;
+    top: 0;
     right: calc(var(--paddingContainer) + 25px);
-    visibility: hidden;
-    transition: visibility 0.3s ease-in-out;
+    display: none;
     background-color: $colorBackground1;
+    animation: form 1s 1;
+    animation-fill-mode: forwards;
+    transition: 1s;
+  }
+
+  @keyframes form {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(150%);
+    }
   }
 
   .form--active {
-    visibility: visible;
+    display: block;
   }
 
   &__input {
@@ -189,6 +221,8 @@
   &__right {
     display: grid;
     gap: 18px;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
   }
 
   &__head {
@@ -201,8 +235,12 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(1, auto);
     gap: 30px;
+
+    img {
+      max-width: 100%;
+      min-height: 100%;
+    }
   }
 
   &__item:nth-child(1) {
@@ -507,6 +545,11 @@
     color: #999999;
   }
 
+  &__label {
+    position: relative;
+    width: 100%;
+  }
+
   &__form {
     display: grid;
     position: relative;
@@ -526,11 +569,13 @@
 
     .just-validate-error-field {
       border: 1px solid #FF3030;
+      background-color: #E9E9E9 !important;
     }
   }
 
   &__input,
   &__textarea {
+    width: 100%;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -541,8 +586,12 @@
     background-color: #E9E9E9;
   }
 
-  &__textarea {
+  &__label-textarea {
     grid-row: 3 / span 3;
+  }
+
+  &__textarea {
+    height: 100%;
   }
 
   &__input::placeholder,
@@ -577,6 +626,41 @@
     width: 126px;
   }
 
+  &__btn-adress {
+    background-color: transparent;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    border: none;
+    outline: none;
+    z-index: 1;
+    opacity: 0;
+    display: none;
+    animation: show 1s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transition: 1s;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {opacity: 1;}
+  }
+
+  .btn--active {
+    display: block;
+  }
+
+  &__btn-svg {
+    width: 50px;
+    height: 50px;
+  }
+
   &__address {
     font-style: normal;
     position: absolute;
@@ -592,6 +676,9 @@
     padding-top: 179px;
     padding-left: 60px;
     padding-right: 50px;
+    transform: none;
+    transition: transform 0.8s ease-in-out,
+    visibility 0.8s ease-in-out;
   }
 
   .icon-close {
@@ -604,6 +691,7 @@
   }
 
   .contacts--none {
+    transform: translateX(-100%);
     visibility: hidden;
   }
 
@@ -716,7 +804,7 @@
 
 .fill_btn {
   transition: background-color 0.3s ease-in-out,
-  border 0.3s ease-in-out;
+  outline 0s ease-in-out;
 }
 
 .fill_btn:focus-visible {
@@ -724,7 +812,7 @@
 }
 
 .fill_btn:hover {
-  border: 3px solid $colorActive;
+  outline: 3px solid $colorActive;
 }
 
 .fill_btn:active {

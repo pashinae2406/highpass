@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const validation = new JustValidate('.about__form');
+  const validation = new JustValidate('.about__form')
 
   validation
     .addField('.email', [{
@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  const validation = new JustValidate('.contacts__form');
+  const validation2 = new JustValidate('.contacts__form')
 
-  validation
-    .addField('.email', [{
+  validation2
+    .addField('.email2', [{
         rule: 'required',
         errorMessage: 'Недопустимый формат',
       },
@@ -26,6 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessage: 'Недопустимый формат',
       }
     ])
+    .addField('.name2', [{
+      rule: 'minLength',
+      value: 1,
+      errorMessage: "Недопустимый формат"
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: "Недопустимый формат"
+    }
+  ])
 })
 
 const iconSearch = document.querySelector('.header__search')
@@ -50,13 +61,21 @@ burger.addEventListener('click', function() {
 })
 close.addEventListener('click', function() {
   burgerMenu.classList.remove('burger--active')
+  iconClose.classList.remove('close--active')
 })
 
 const closeContacts = document.querySelector('.icon-close')
 const contactsAdress = document.querySelector('.contacts__address')
+const adressButton = document.querySelector('.contacts__btn-adress')
 
 closeContacts.addEventListener('click', function() {
   contactsAdress.classList.toggle('contacts--none')
+  adressButton.classList.toggle('btn--active')
+})
+
+adressButton.addEventListener('click', function() {
+  adressButton.classList.remove('btn--active')
+  contactsAdress.classList.remove('contacts--none')
 })
 
 

@@ -29,10 +29,10 @@
     }
 
     &__list {
-      visibility: hidden;
+      display: none;
       position: absolute;
       top: 0;
-      left: 0;
+      left: -100%;
       right: 0;
       height: 100vh;
       grid-template: initial;
@@ -42,7 +42,19 @@
       padding-left: var(--paddingContainer);
       justify-items: flex-start;
       margin-bottom: 212px;
-      transition: visibility 0.3s ease-in-out;
+      animation: burger 1s 1;
+      animation-fill-mode: forwards;
+      animation-delay: 0.3s;
+      transition: 1s;
+
+      @keyframes burger {
+        0% {
+          transform: none;
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
 
       .tel-head {
         display: block;
@@ -69,7 +81,8 @@
     }
 
     .burger--active {
-      visibility: visible;
+      // visibility: visible;
+      display: grid;
     }
 
     .close--active {
