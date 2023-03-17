@@ -1946,6 +1946,8 @@ body {
 .work__list img {
   max-width: 100%;
   min-height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .work__item:nth-child(1) {
   grid-column: 1/span 2;
@@ -1992,7 +1994,7 @@ body {
 .about__right {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(2, min-content);
   gap: 18px;
 }
 .about__right-bottom {
@@ -2094,7 +2096,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+}
+.projects__item picture {
+  margin-bottom: 18px;
 }
 .projects__item:nth-child(4) {
   grid-column: 1/span 3;
@@ -2161,11 +2165,9 @@ body {
 }
 .projects__btn:hover {
   background-color: #FF6E30;
-  border: none;
 }
 .projects__btn:active {
   background-color: #CE4307;
-  border: none;
 }
 .projects .left-bottom {
   background-image: url(../images/project-left-bottom.png);
@@ -2178,6 +2180,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 22px 30px 30px;
+  justify-content: space-between;
 }
 .projects .left-bottom .projects__date,
 .projects .right-top .projects__date {
@@ -2224,6 +2227,7 @@ body {
   grid-template-columns: repeat(2, auto);
   grid-template-rows: 1fr;
   gap: 30px;
+  overflow: hidden;
 }
 .contacts__left {
   position: relative;
@@ -2326,11 +2330,12 @@ body {
   width: 126px;
 }
 .contacts__btn-adress {
-  background-color: transparent;
+  background-color: white;
+  border: 1px solid #999999;
+  border-radius: 2px;
   position: absolute;
   top: 50px;
   left: 0;
-  border: none;
   outline: none;
   z-index: 1;
   opacity: 0;
@@ -2355,8 +2360,8 @@ body {
   display: block;
 }
 .contacts__btn-svg {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 .contacts__address {
   font-style: normal;
@@ -2488,7 +2493,8 @@ body {
 }
 
 .fill_btn {
-  transition: background-color 0.3s ease-in-out, outline 0s ease-in-out;
+  outline: transparent;
+  transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
 }
 
 .fill_btn:focus-visible {

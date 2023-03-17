@@ -240,6 +240,7 @@
     img {
       max-width: 100%;
       min-height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -291,7 +292,7 @@
   &__right {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, min-content);
     gap: 18px;
   }
 
@@ -388,7 +389,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+
+    picture {
+      margin-bottom: 18px;
+    }
 
   }
 
@@ -454,12 +458,10 @@
 
   &__btn:hover {
     background-color: $colorHover;
-    border: none;
   }
 
   &__btn:active {
     background-color: $colorActive;
-    border: none;
   }
 
   .left-bottom {
@@ -475,6 +477,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 22px 30px 30px;
+    justify-content: space-between;
 
     .projects__date {
       color: $colorFont;
@@ -520,6 +523,7 @@
     grid-template-columns: repeat(2, auto);
     grid-template-rows: 1fr;
     gap: 30px;
+    overflow: hidden;
   }
 
   &__left {
@@ -627,11 +631,12 @@
   }
 
   &__btn-adress {
-    background-color: transparent;
+    background-color: white;
+    border: 1px solid #999999;
+    border-radius: 2px;
     position: absolute;
     top: 50px;
     left: 0;
-    border: none;
     outline: none;
     z-index: 1;
     opacity: 0;
@@ -657,8 +662,8 @@
   }
 
   &__btn-svg {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 
   &__address {
@@ -803,8 +808,9 @@
 }
 
 .fill_btn {
+  outline: transparent;
   transition: background-color 0.3s ease-in-out,
-  outline 0s ease-in-out;
+  outline 0.3s ease-in-out;
 }
 
 .fill_btn:focus-visible {
