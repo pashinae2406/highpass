@@ -1,0 +1,42 @@
+@import '_var.scss';
+@import '_media1920.scss';
+@import '_media1350.scss';
+
+@mixin btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 12.5px 21px;
+  background-color: #FF6E30;
+  color: $colorFont;
+  border: none;
+}
+
+@mixin head2 {
+  margin: 0;
+  font-family: 'TTFirsNeue';
+  font-weight: 700;
+  font-size: 24px;
+}
+
+@mixin head2-320 {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+@mixin fontParagraph {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $colorFont2;
+}
+
+@mixin elem-abs {
+  position: absolute;
+  background-color: $colorBackground1;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $colorFont;
+}
